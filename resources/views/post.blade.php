@@ -57,10 +57,6 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="image">Insira apenas se quiser mudar</label>
-                        <input type="file" name="image" id="image" class="form-control">
-                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">

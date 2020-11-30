@@ -65,14 +65,6 @@ class PostController extends Controller
         $post->text = $request->input('text');
         $post->active = ($request->input('active') == 'S');
 
-        if($request->hasFile('image')) {
-            $filename = uniqid() . "." . $request->file('image')->extension();
-            $path = $request->file('image')->storeAs('public/posts', $filename);
-            $post->url_image = $filename;
-        } else {
-            $post->url_image = "";
-        }
-
         $post->save();
 
         return redirect()->route('posts.index');
@@ -109,7 +101,7 @@ class PostController extends Controller
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
-        if($validator->fails()){
+        if ($validator->fails()){
             return back()->withErrors($validator)->withInput();
         }
 
@@ -120,12 +112,6 @@ class PostController extends Controller
         $post->summary = $request->input('summary');
         $post->text = $request->input('text');
         $post->active = ($request->input('active') == 'S');
-
-        if($request->hasFile('image')) {
-            $filename = uniqid() . "." . $request->file('image')->extension();
-            $path = $request->file('image')->storeAs('public/posts', $filename);
-            $post->url_image = $filename;
-        }
         
         $post->save();
 

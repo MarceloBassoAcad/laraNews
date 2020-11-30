@@ -16,11 +16,8 @@
         <div class="col-12">
             <h3>{{ $post->title }}</h3><br>
             <p><strong>{{ $post->summary }}</strong></p><br>
-            <p>{{ $post->text }}</p><br>
-            @if ($post->url_image)
-                <img style="max-width:200px" src="{{ asset('storage/app/public/posts/' . $post->url_image) }}" class="img-thumbnail mb-2">
-            @endif
-            <br><br><hr><br>
+            <p>{{ $post->text }}</p>
+            <br><hr><br>
         </div>
         @endforeach
     </div>
