@@ -20,7 +20,6 @@ class CreatePostsTable extends Migration
             $table->text('summary');
             $table->text('text');
             $table->boolean('active');
-            $table->string('url_image', 255);
             $table->timestamps();
 
             $table->foreign('category_id')
