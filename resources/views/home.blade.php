@@ -14,8 +14,8 @@
     <div class="row mt-3">
         @foreach ($posts as $post)
         <div class="col-12">
-            <h3>{{ $post->title }}</h3><br>
-            <p><strong>{{ $post->summary }}</strong></p><br>
+            <h3>{{ $post->title }}</h3>
+            <p><i>{{ $post->summary }}</i></p><br>
             <p>{{ $post->text }}</p>
             <br><hr><br>
         </div>
