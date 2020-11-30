@@ -14,10 +14,10 @@
         <div class="col-12">
             @include('partials.errors')
 
-            @if($post->id)
-            <form action="{{ route('posts.update', ['id' => $post->id]) }}" method="POST" enctype="multipart/form-data">
+            @if ($post->id)
+                <form action="{{ route('posts.update', ['id' => $post->id]) }}" method="POST" enctype="multipart/form-data">
             @else
-            <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
             @endif
 
                 {{ csrf_field() }}
@@ -44,9 +44,9 @@
                         <label for="category_id">Categoria</label>
                         <select name="category_id" id="category_id" class="form-control">
                             <option value="">Selecione</option>
-                            @foreach($categories as $category)
-                                @if(isset($post->category_id))
-                                    @if($category->id == $post->category_id)
+                            @foreach ($categories as $category)
+                                @if (isset($post->category_id))
+                                    @if ($category->id == $post->category_id)
                                         <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
                                     @else
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -65,7 +65,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <div class="custom-control custom-switch">
-                            @if($post->active)
+                            @if ($post->active)
                                 <input type="checkbox" name="active" id="active" class="custom-control-input" value="S" checked>
                             @else
                                 <input type="checkbox" name="active" id="active" class="custom-control-input" value="S">

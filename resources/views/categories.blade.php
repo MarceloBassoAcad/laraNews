@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-12">
-            <h1> LaraNews </h1> ?php - Categorias</h1>
+            <h1>LaraNews - Categorias</h1>
             <a href="{{ route('categories.create') }}" class="btn btn-success">Inserir</a>
         </div>
     </div>
@@ -21,7 +21,7 @@
                     <th width="15%">Ativo</th>
                     <th width="10%">Ações</th>
                 </tr>
-                @foreach($categories as $category)
+                @foreach ($categories as $category)
                     <tr>
                         <td>{{ $category->id }}</td>
                         <td>{{ $category->name }}</td>
